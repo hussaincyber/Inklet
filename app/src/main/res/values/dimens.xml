@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="wood_panel_width">52dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="format_bar_height">48dp</dimen>
+</resources>

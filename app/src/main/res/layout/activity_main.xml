@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_bg">
+
+    <!-- Left wood panel (light theme only, toggled in code) -->
+    <ImageView
+        android:id="@+id/wood_left"
+        android:layout_width="@dimen/wood_panel_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/wood_texture"
+        android:scaleType="centerCrop" />
+
+    <!-- Right wood panel -->
+    <ImageView
+        android:id="@+id/wood_right"
+        android:layout_width="@dimen/wood_panel_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/wood_texture"
+        android:scaleType="centerCrop" />
+
+    <!-- Main content area between the panels -->
+    <LinearLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/wood_left"
+        android:layout_toStartOf="@id/wood_right"
+        android:orientation="vertical"
+        android:background="@color/light_bg">
+
+        <!-- Toolbar -->
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:background="@color/light_toolbar_bg">
+
+            <TextView
+                android:id="@+id/tv_logo_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Inklet"
+                android:fontFamily="serif"
+                android:textSize="26sp"
+                android:textColor="@color/light_text_primary"
+                android:letterSpacing="0.05" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <!-- NoteShare link -->
+                <ImageButton
+                    android:id="@+id/btn_noteshare"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_link"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Inklet Note Share"
+                    android:tint="@color/light_text_primary" />
+
+                <!-- Theme toggle -->
+                <ImageButton
+                    android:id="@+id/btn_theme_toggle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_theme"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Toggle theme"
+                    android:tint="@color/light_text_primary" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_divider" />
+
+        <!-- NoteShare banner (dismissible) -->
+        <RelativeLayout
+            android:id="@+id/banner_noteshare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_accent"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_banner_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btn_banner_visit"
+                android:text="Share your notes with the world →"
+                android:fontFamily="sans-serif"
+                android:textSize="12sp"
+                android:textColor="#FDF6EC" />
+
+            <Button
+                android:id="@+id/btn_banner_visit"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btn_banner_close"
+                android:layout_marginEnd="4dp"
+                android:text="Visit"
+                android:fontFamily="sans-serif"
+                android:textSize="11sp"
+                android:textColor="@color/light_accent"
+                android:background="@color/light_card_bg"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+            <ImageButton
+                android:id="@+id/btn_banner_close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_clear_format"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:tint="#FDF6EC"
+                android:contentDescription="Dismiss" />
+
+        </RelativeLayout>
+
+        <!-- Greeting -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="6dp"
+            android:text="Hello."
+            android:fontFamily="serif"
+            android:textSize="22sp"
+            android:textColor="@color/light_text_primary" />
+
+        <!-- Search bar -->
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/search_notes"
+            android:fontFamily="sans-serif"
+            android:textSize="13sp"
+            android:textColor="@color/light_text_primary"
+            android:textColorHint="@color/light_text_secondary"
+            android:background="@drawable/bg_search_light"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionSearch" />
+
+        <!-- Notes list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_notes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp" />
+
+        <!-- Empty state -->
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/empty_state"
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:textColor="@color/light_text_secondary"
+            android:paddingTop="60dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_new_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/light_fab_bg"
+        app:tint="@color/light_fab_icon"
+        app:elevation="4dp" />
+
+</RelativeLayout>
