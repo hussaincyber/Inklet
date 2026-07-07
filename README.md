@@ -10,6 +10,12 @@ Installation Process:
 -Download the apk above
 -THIS APP IS FOR MOBILE ONLY. Developing Desktop App Soon
 
+App Description:
+
+Inklet is a note taking app designed as a applicable replacement for the default notepad. As it is just a fun project the app bugs and updates will be a bit slow but I'll try my best to push it as soon as possible. 
+
+Vibecoded: Y
+
 License
 This project is open source. Do whatever you want with it honestly.
 
