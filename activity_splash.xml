@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_bg">
+
+    <!-- Center content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inklet"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="52sp"
+            android:textColor="@color/light_text_primary"
+            android:letterSpacing="0.1"
+            android:alpha="0" />
+
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="your notes, only yours."
+            android:fontFamily="sans-serif"
+            android:textStyle="italic"
+            android:textSize="13sp"
+            android:textColor="@color/light_text_secondary"
+            android:alpha="0" />
+
+        <!-- First launch setup -->
+        <LinearLayout
+            android:id="@+id/layout_setup"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What should we call you?"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:textColor="@color/light_text_secondary"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Your name"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:textColor="@color/light_text_primary"
+                android:textColorHint="@color/light_text_secondary"
+                android:background="@drawable/bg_input_light"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:text="Continue"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"
+                android:textColor="@color/light_fab_icon"
+                android:background="@drawable/bg_btn_dark"
+                android:letterSpacing="0.08" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
